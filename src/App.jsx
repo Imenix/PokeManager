@@ -5,12 +5,13 @@ import Team from "./components/Team";
 import Pokemon from "./components/Pokemon";
 import NavBar from "./components/NavigationBar";
 import { useState } from "react";
+import Footer from "./components/Footer";
 
 function App() {
   const [team, setTeam] = useState([]);
 
   return (
-    <Router>
+    <Router className="App">
       <div className="App">
         <header className="header">
           <h1>Pokemon Manager</h1>
@@ -26,8 +27,8 @@ function App() {
             />
           </Routes>
         </main>
-        <footer />
       </div>
+      <Footer />
     </Router>
   );
 }

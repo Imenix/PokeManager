@@ -1,4 +1,5 @@
 .App{
+  
   background-color: rgba(193, 196, 195, 0.778);
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1920px-International_Pok%C3%A9mon_logo.svg.png");
 }
@@ -10,7 +11,6 @@
   margin: 10%;
   padding: 2%;
   margin-top: -10px;
-  margin-bottom: 2%;
   font: tahoma;
   font-weight: bold;
   color: rgb(0, 0, 0);
@@ -21,24 +21,29 @@
   border-radius: 3px;
   text-align: center;
   margin-top: -10px;
-  margin: 10%;
   padding: 5%;
+  opacity: 0.96;
 }
 .body{
+  
   background-color: rgb(241, 102, 102);
   border-radius: 5px;
   text-align: center;
   margin: 5%;
+  padding-top: 20px;
+  margin-bottom: 10%;
 
 }
 .footer{
   background-color: rgb(241, 102, 102);
   border-radius: 5px;
   text-align: center;
-  margin: 5%;}
+  margin: 5%;
+  size: auto; 
+}
 
   .nav-button{
-    opacity: 0.8;
+    opacity: 1;
     background-color: rgb(210, 1, 147);
     border-radius: 5px;
     text-align: center;
@@ -51,7 +56,7 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
   .nav-button:hover{
-    opacity: 1;
+    opacity: 0.9;
   }
   .home{
 
@@ -72,6 +77,12 @@
     grid-gap: 3px;
     margin: 1%;
     padding: 1%;
+    margin-top: -10px;
+    margin-bottom: 2%;
+    font: tahoma;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    font-feature-settings: "akhn";
 }
 
 .pokemon-card{
@@ -83,9 +94,12 @@
   margin: 5px;
   padding: 5em;
   opacity: 1;
+  box-shadow: rgb(2, 3, 2)  0px 0px 10px;
+
 }
 .pokemon-card:hover{
   opacity: 0.9;
+
 }
 
 .team-page{
@@ -93,5 +107,9 @@
   border-radius: 5px;
   text-align: center;
   margin: 5%;
+  padding: 2%;
 
+}
+.html{
+  Min-height: 100vh;
 }
