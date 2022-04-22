@@ -32,11 +32,10 @@
 
 }
 .footer{
-  background-color: rgb(132, 208, 255);
+  background-color: rgb(241, 102, 102);
+  border-radius: 5px;
   text-align: center;
-  border: 1px solid;
-  border-color: rgb(250, 235, 215);
-  border-radius: 5px;}
+  margin: 5%;}
 
   .nav-button{
     opacity: 0.8;
@@ -87,4 +86,12 @@
 }
 .pokemon-card:hover{
   opacity: 0.9;
+}
+
+.team-page{
+  background-color: rgb(241, 102, 102);
+  border-radius: 5px;
+  text-align: center;
+  margin: 5%;
+
 }

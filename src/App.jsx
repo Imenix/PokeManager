@@ -4,8 +4,11 @@ import Home from "./components/Home";
 import Team from "./components/Team";
 import Pokemon from "./components/Pokemon";
 import NavBar from "./components/NavigationBar";
+import { useState } from "react";
 
 function App() {
+  const [team, setTeam] = useState([]);
+
   return (
     <Router>
       <div className="App">
@@ -16,8 +19,11 @@ function App() {
         <main>
           <Routes>
             <Route path="/Home" element={<Home />} />
-            <Route path="/Pokemon" element={<Pokemon />} />
-            <Route path="/Team" element={<Team />} />
+            <Route path="/Pokemon" element={<Pokemon setTeam={setTeam} />} />
+            <Route
+              path="/Team"
+              element={<Team team={team} setTeam={setTeam} />}
+            />
           </Routes>
         </main>
         <footer />

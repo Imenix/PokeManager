@@ -2,16 +2,41 @@ import React from "react";
 import Pokemon from "./Pokemon";
 import { useState } from "react";
 
-const PokemonCard = ({ id, name, image }) => {
-  const [selected, setSelected] = useState(false);
+const PokemonCard = ({ addPokemon, id, name, image, nickname, setTeam }) => {
+  const selectPokemon = (id, name, image) => {
+    const promptNickname = window.prompt("Select a Nickname");
+    setTeam((prevProps) => [
+      ...prevProps,
+      {
+        id: id,
+        name: name,
+        image: image,
+        nickname: promptNickname,
+      },
+    ]);
+  };
+
+  const removePokemon = (nickname) => {
+    setTeam((prevProps) =>
+      prevProps.filter((pokemon) => pokemon.nickname !== nickname)
+    );
+  };
+
   return (
     <div className="pokemon-card">
       <h1># {id}</h1>
       <h2>{name}</h2>
+      {nickname ? <h2>{nickname}</h2> : <span></span>}
       <img src={image} alt={name} />
-      <button onClick={setSelected(true)}>Add to Team</button>
-      {/* <div>{ if(selected == true)
-      <button onClick={selected == false}>Remove from Team</button>}</div> */}
+      {addPokemon ? (
+        <button onClick={() => selectPokemon(id, name, image)}>
+          Add to Team
+        </button>
+      ) : (
+        <button onClick={() => removePokemon(nickname)}>
+          Remove from Team
+        </button>
+      )}
     </div>
   );
 };

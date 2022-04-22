@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import PokemonCard from "./PokemonCard";
 
-const Pokemon = () => {
+const Pokemon = ({ setTeam }) => {
   const [PokemonArray, setPokemonArray] = useState([]);
   const [PokemonBaseArray, setPokemonBaseArray] = useState([]);
   const [NextSet, setNextSet] = useState(
@@ -26,7 +26,6 @@ const Pokemon = () => {
     for (let pokemon of results) {
       await fetch(pokemon.url).then(async (response) => {
         const data = await response.json();
-        console.log(data);
         setPokemonArray((conArray) => [...conArray, data]);
         setPokemonBaseArray((conArray) => [...conArray, data]);
       });
@@ -79,10 +78,13 @@ const Pokemon = () => {
           {!searching ? (
             PokemonArray.map((pokemon, index) => (
               <PokemonCard
+                addPokemon={true}
                 key={index}
                 id={pokemon.id}
                 name={pokemon.name}
                 image={pokemon.sprites.front_default}
+                nickname=""
+                setTeam={setTeam}
               />
             ))
           ) : (
